@@ -1,0 +1,41 @@
+body {
+    justify-content: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  .app{
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .card {
+    background: rgb(58, 58, 58);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 280px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .btn {
+    background-color: #3563E9;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+ 

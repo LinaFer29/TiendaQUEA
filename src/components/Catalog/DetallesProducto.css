@@ -1,0 +1,61 @@
+.container-detalles {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #333;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* para que se adapte en pantallas pequeñas */
+  }
+  
+  /* Sección del modelo 3D */
+  .container-detalles model-viewer {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  
+  /* Sección de información */
+  .product-info {
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .product-info p {
+    font-size: 1.1rem;
+    color: #d6d6d6;
+    margin: 10px 0;
+  }
+  
+  .product-info p.precio {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #3563E9;
+  }
+  
+  /* Botón agregar */
+  .product-info .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #3563E9;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-info .btn:hover {
+    background-color: #2457f1;
+  }

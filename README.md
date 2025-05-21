@@ -32,10 +32,10 @@ Desarrollar una **tienda virtual 3D** que permita:
 ### Pasos para ejecución local
 
 1. **Clona este repositorio**
-   ```bash
+```bash
 git clone https://github.com/tu-usuario/tiendaquea.git
 cd tiendaquea
-   ```
+```
 2. **Instala las Dependencias**
 ```bash
 npm install

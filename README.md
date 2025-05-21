@@ -1,12 +1,60 @@
-# React + Vite
+# TiendaQUEA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TiendaQUEA** es una tienda virtual 3D desarrollada con **React + Vite**. Este proyecto busca ofrecer una experiencia interactiva y moderna para la visualización y compra de productos en línea, inspirada en el estilo de tiendas como **IKEA**, pero con un enfoque visual y funcional propio.
 
-Currently, two official plugins are available:
+## Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Desarrollar una **tienda virtual 3D** que permita:
 
-## Expanding the ESLint configuration
+- Visualizar productos en 3D interactivos.
+- Registrarse e iniciar sesión.
+- Agregar productos al carrito y a favoritos.
+- Realizar compras con confirmación y generación de factura personalizada.
+- Gestionar información de envío y ver un resumen de pedido.
+- Disfrutar de una interfaz moderna, funcional y responsiva.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Autores
+
+- **Juan José Pizo Camacho**
+- **Lina María Fernández García**
+
+---
+
+## Cómo ejecutar el proyecto
+
+### Requisitos
+
+- Node.js v16 o superior
+- npm
+
+### Pasos para ejecución local
+
+1. **Clona este repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/tiendaquea.git
+   cd tiendaquea
+   ```
+2. **Instala las Dependencias**
+```bash
+npm install
+```
+
+3. **Inicia el servidor de desarrollo**
+```bash
+npm run dev
+```
+
+4. **Abre en tu navegador**
+```bash
+http://localhost:5173
+```
+
+## Tecnologías Utilizadas
+- React
+- Vite
+- CSS personalizado
+- Context API
+- React Router
+- Model Viewer para productos 3D

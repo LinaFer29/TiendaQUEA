@@ -148,6 +148,9 @@
     /* margin-right: 5px; */
   }
 
- 
+ .navbar-links .active {
+  font-weight: bold;
+  color: #007bff;
+  }
   
   

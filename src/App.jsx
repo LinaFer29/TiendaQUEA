@@ -9,6 +9,8 @@ import Carrito from './components/Catalog/Carrito';
 import ResumenCompra from './components/Compra/ResumenCompra';
 import DetallesProducto from './components/Catalog/DetallesProducto';
 import FormularioCompra from './components/Compra/FormularioCompra';
+import Favoritos from './components/Favoritos/Favoritos';
+import HistorialCompras from './components/Historial/HistorialCompras';
 
 function AppContent() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
@@ -38,6 +40,8 @@ function AppContent() {
                 <Route path="/carrito" element={<Carrito />} />
                 <Route path="/formulario" element={<FormularioCompra />} />
                 <Route path="/resumen-compra" element={<ResumenCompra />}/>
+                <Route path="/favoritos" element={<Favoritos />} />
+                <Route path="/historial" element={<HistorialCompras />} />
 
                 {/* <Route path="characters" element={<CharacterList />} />
           <Route path="/characters/:id" element={<CharacterDetail />} />

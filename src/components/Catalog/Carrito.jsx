@@ -9,10 +9,30 @@ export function Carrito() {
   const total = cartItems.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
 
   const handleCartStorage = () => {
-    const resumenCompra = [...cartItems];
-    localStorage.setItem('resumenCompra', JSON.stringify(resumenCompra));
+    const usuario = localStorage.getItem("username");
+    if (!usuario) {
+      alert("Debes iniciar sesión para comprar");
+      return;
+    }
+
+    const comprasPrevias = JSON.parse(localStorage.getItem("compras_por_usuario")) || {};
+    const fechaActual = new Date().toISOString();
+
+    const nuevaCompra = {
+      fecha: fechaActual,
+      productos: [...cartItems],
+    };
+
+    const comprasUsuario = comprasPrevias[usuario] || [];
+    comprasUsuario.push(nuevaCompra);
+    comprasPrevias[usuario] = comprasUsuario;
+
+    localStorage.setItem("compras_por_usuario", JSON.stringify(comprasPrevias));
+    localStorage.setItem('resumenCompra', JSON.stringify(cartItems)); // puedes seguir usando esto si tu formulario lo necesita
+
     navigate('/formulario');
-  }
+  };
+
 
   return (
     <div className="carrito">

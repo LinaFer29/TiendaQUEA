@@ -1,0 +1,66 @@
+.favoritos-container {
+    padding: 20px;
+    color: #e0e0e0; /* texto claro */
+    min-height: 100vh; /* que tome toda la altura */
+}
+
+.favoritos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.favorito-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #1e1e1e; /* card oscuro */
+}
+
+.favorito-info {
+    flex: 1;
+}
+
+.favorito-info h3 {
+    margin: 0 0 10px;
+    color: #fff; /* título en blanco */
+}
+
+.favorito-info p {
+    margin: 4px 0;
+    color: #ccc; /* texto un poco más claro */
+}
+
+.favorito-acciones {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* espacio entre link y botón */
+}
+
+.favorito-info a {
+    color: #90caf9; /* link azul claro */
+    text-decoration: none;
+}
+
+.favorito-info a:hover {
+    text-decoration: underline;
+}
+
+.favorito-info button {
+    background-color: #e53935; /* rojo para destacar */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(229, 57, 53, 0.6);
+}
+
+.favorito-info button:hover {
+    background-color: #555;
+}

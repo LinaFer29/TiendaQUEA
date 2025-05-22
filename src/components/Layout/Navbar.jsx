@@ -49,6 +49,21 @@ function Navbar({ onLogout }) {
           >
             Catalogo
           </Link>
+
+          <Link 
+            to="/favoritos" 
+            className={location.pathname === '/favoritos' ? 'active' : ''}
+          >
+            Favoritos
+          </Link>
+
+          <Link 
+            to="/historial" 
+            className={location.pathname === '/historial' ? 'active' : ''}
+          >
+            Historial
+          </Link>
+
          {/*  <Link 
             to="/form" 
             className={location.pathname === '/form' ? 'active' : ''}

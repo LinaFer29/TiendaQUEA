@@ -4,21 +4,41 @@ import './Favoritos.css';
 
 function Favoritos() {
     const [favoritos, setFavoritos] = useState([]);
+    const usuario = localStorage.getItem("username"); // Usuario activo
 
     useEffect(() => {
-        const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
-        setFavoritos(favs);
-    }, []);
+        if (!usuario) return;
+
+        // Obtenemos todos los favoritos guardados por usuario
+        const favoritosPorUsuario = JSON.parse(localStorage.getItem("favoritos_por_usuario")) || {};
+        const favoritosDelUsuario = favoritosPorUsuario[usuario] || [];
+        setFavoritos(favoritosDelUsuario);
+    }, [usuario]);
 
     const quitarFavorito = (id) => {
+        if (!usuario) return;
+
         const nuevosFavoritos = favoritos.filter(item => item.id !== id);
         setFavoritos(nuevosFavoritos);
-        localStorage.setItem("favoritos", JSON.stringify(nuevosFavoritos));
+
+        // Actualizamos el objeto de favoritos por usuario
+        const favoritosPorUsuario = JSON.parse(localStorage.getItem("favoritos_por_usuario")) || {};
+        favoritosPorUsuario[usuario] = nuevosFavoritos;
+        localStorage.setItem("favoritos_por_usuario", JSON.stringify(favoritosPorUsuario));
     };
 
-    if (favoritos.length === 0) {
-        return <h2>No tienes productos en favoritos 😢</h2>;
+    if (!usuario) {
+        return <h2>Debes iniciar sesión para ver tus favoritos 🧑‍💻</h2>;
     }
+
+    if (favoritos.length === 0) {
+    return (
+        <div className="favoritos-vacio">
+            <img src="/images/Imagen2.png" alt="Sin favoritos" className="imagen-vacia" />
+            <h2>No tienes productos en favoritos </h2>
+        </div>
+    );
+}
 
     return (
         <div className="favoritos-container">

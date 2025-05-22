@@ -64,3 +64,31 @@
 .favorito-info button:hover {
     background-color: #555;
 }
+
+.favoritos-vacio {
+    text-align: center;
+    margin-top: 80px;
+    color: #444; /* Cambia el color del texto */
+    font-family: Verdana;
+}
+
+.imagen-vacia {
+    width: 300px; /* Cambia el tamaño aquí */
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.favoritos-vacio h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff; 
+}

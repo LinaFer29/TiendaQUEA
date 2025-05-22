@@ -59,3 +59,7 @@
   .product-info .btn:hover {
     background-color: #2457f1;
   }
+
+  .product-info .btn + .btn {
+  margin-left: 12px; /* Espacio entre botones */
+  }

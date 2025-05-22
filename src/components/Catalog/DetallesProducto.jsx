@@ -9,25 +9,35 @@ function DetallesProducto() {
     const { id } = useParams();
     const producto = productos.find((item) => item.id === parseInt(id));
 
-    const [favoritos, setFavoritos] = useState([]);
+    const usuario = localStorage.getItem("username");
     const [esFavorito, setEsFavorito] = useState(false);
 
-    // Cargar favoritos desde localStorage
     useEffect(() => {
-        const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
-        setFavoritos(favs);
-        setEsFavorito(favs.some(item => item.id === producto?.id));
-    }, [producto]);
+        if (!usuario || !producto) return;
+
+        const favsPorUsuario = JSON.parse(localStorage.getItem("favoritos_por_usuario")) || {};
+        const favs = favsPorUsuario[usuario] || [];
+        setEsFavorito(favs.some(item => item.id === producto.id));
+    }, [producto, usuario]);
 
     const toggleFavorito = () => {
+        if (!usuario) {
+            alert("Debes iniciar sesión para usar favoritos.");
+            return;
+        }
+
+        const favsPorUsuario = JSON.parse(localStorage.getItem("favoritos_por_usuario")) || {};
+        const favs = favsPorUsuario[usuario] || [];
+
         let nuevosFavoritos;
         if (esFavorito) {
-            nuevosFavoritos = favoritos.filter(item => item.id !== producto.id);
+            nuevosFavoritos = favs.filter(item => item.id !== producto.id);
         } else {
-            nuevosFavoritos = [...favoritos, producto];
+            nuevosFavoritos = [...favs, producto];
         }
-        setFavoritos(nuevosFavoritos);
-        localStorage.setItem("favoritos", JSON.stringify(nuevosFavoritos));
+
+        favsPorUsuario[usuario] = nuevosFavoritos;
+        localStorage.setItem("favoritos_por_usuario", JSON.stringify(favsPorUsuario));
         setEsFavorito(!esFavorito);
     };
 
